@@ -1,0 +1,108 @@
+<!doctype html>
+<html lang="pt-BR">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Notícias Brasil — GNews</title>
+    <link rel="stylesheet" href="styles.css" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap"
+      rel="stylesheet"
+    />
+  </head>
+  <body>
+    <div class="bg-orb bg-orb--one"></div>
+    <div class="bg-orb bg-orb--two"></div>
+
+    <header class="header">
+      <div class="container header__content">
+        <div class="logo">
+          <span class="logo__icon">🗞️</span>
+          <div class="logo__text">
+            <strong>Notícias Brasil</strong>
+            <span>Seu briefing diário com a API GNews</span>
+          </div>
+        </div>
+      </div>
+    </header>
+
+    <main class="container">
+      <section class="hero">
+        <div class="hero__content">
+          <div class="hero__copy">
+            <p class="eyebrow">Radar de notícias em tempo real</p>
+            <h1>Encontre as principais notícias do Brasil e do mundo.</h1>
+            <p class="hero__subtitle">
+              Pesquise temas, selecione categorias e compartilhe rapidamente com sua
+              equipe.
+            </p>
+            <form id="searchForm" class="searchbar">
+              <input
+                id="searchInput"
+                type="search"
+                placeholder="Buscar notícias (ex: economia, saúde, tecnologia)"
+              />
+              <button class="btn btn--primary" type="submit">Buscar</button>
+              <button class="btn btn--ghost" type="button" id="clearSearch">
+                Limpar
+              </button>
+            </form>
+            <nav class="chips" aria-label="Categorias">
+              <button class="chip is-active" data-category="general">Geral</button>
+              <button class="chip" data-category="world">Mundo</button>
+              <button class="chip" data-category="nation">Brasil</button>
+              <button class="chip" data-category="business">Negócios</button>
+              <button class="chip" data-category="technology">Tecnologia</button>
+              <button class="chip" data-category="entertainment">Entretenimento</button>
+              <button class="chip" data-category="sports">Esportes</button>
+              <button class="chip" data-category="science">Ciência</button>
+              <button class="chip" data-category="health">Saúde</button>
+            </nav>
+          </div>
+          <aside class="hero__panel">
+            <div class="panel">
+              <div class="panel__stats">
+                <div class="stat">
+                  <span class="stat__label">Categoria</span>
+                  <strong id="activeCategory">Geral</strong>
+                </div>
+                <div class="stat">
+                  <span class="stat__label">Resultados</span>
+                  <strong id="resultCount">0</strong>
+                </div>
+                <div class="stat">
+                  <span class="stat__label">Atualizado</span>
+                  <strong id="lastUpdated">--</strong>
+                </div>
+              </div>
+              <div class="panel__toggle">
+                <span>Visualização</span>
+                <div class="toggle">
+                  <button class="toggle-btn is-active" data-view="grid">Grade</button>
+                  <button class="toggle-btn" data-view="list">Lista</button>
+                </div>
+              </div>
+            </div>
+          </aside>
+        </div>
+      </section>
+
+      <section class="status" id="status" aria-live="polite"></section>
+
+      <section class="grid" id="newsGrid" aria-live="polite"></section>
+    </main>
+
+    <footer class="footer">
+      <div class="container">
+        <p>
+          Prática de consumo da API GNews com chave protegida no servidor. Layout
+          responsivo para desktop e mobile.
+        </p>
+      </div>
+    </footer>
+
+    <script src="app.js"></script>
+  </body>
+</html>
